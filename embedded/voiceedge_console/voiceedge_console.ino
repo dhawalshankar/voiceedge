@@ -4,7 +4,7 @@
 //
 // Wiring
 //   OLED (I2C 0x3C): SDA->A4, SCL->A5, VCC->5V, GND->GND
-//   LEDs (via 220R): Green D4, Blue D5, Yellow D6, Red D7 -> GND
+//   LEDs (via 220R): Red D4, Yellow D5, Green D6, Blue D7 -> GND
 //   Buttons (other leg to GND): START D8, STOP D9, RESTART D10, MAINT D11
 
 #include <Wire.h>
@@ -13,7 +13,7 @@
 
 Adafruit_SSD1306 oled(128, 64, &Wire, -1);
 
-const uint8_t LED_G = 4, LED_B = 5, LED_Y = 6, LED_R = 7;
+const uint8_t LED_G = 6, LED_B = 7, LED_Y = 5, LED_R = 4;
 const uint8_t BTN_PIN[4] = {8, 9, 10, 11};
 const char* const BTN_CMD[4] = {"START", "STOP", "RESTART", "MAINT"};
 
